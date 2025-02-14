@@ -2,7 +2,7 @@
 
 public static class PriceCalculator
 {
-    private static double MarginPrice(double price, double marginValue)
+    public static double MarginPrice(double price, double marginValue)
     {
         return price * (marginValue / 100);
     }
@@ -15,5 +15,15 @@ public static class PriceCalculator
     public static double CalculateVatPrice(double price, double vat)
     {
         return price * (vat / 100);
+    }
+
+    public static void CalculateVatPriceVoid(double price, double vat)
+    {
+        var value = price * (vat / 100);
+    }
+
+    public static bool VatIsNotNull(double price, double vat)
+    {
+        return (price * (vat / 100)) != 0;
     }
 }

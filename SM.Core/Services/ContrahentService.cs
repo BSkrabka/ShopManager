@@ -21,6 +21,15 @@ public class ContrahentService : BaseService<Contrahent, ContrahentRequest, Cont
         };
     }
 
+    public Contrahent MapToEntityModel(ContrahentRequest request)
+    {
+        return new Contrahent
+        {
+            Name = request.Name,
+            Margin = request.Margin
+        };
+    }
+
     protected override ContrahentResponse MapToResponse(Contrahent entity)
     {
         return new ContrahentResponse(entity);
